@@ -1,0 +1,28 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.bubenheimer.dbinspectorbugs">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application
+        android:name=".App"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,MissingApplicationIcon">
+        <activity
+            android:name=".MainActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Alternatively, run service in a separate process -->
+        <service
+            android:name=".FGSvc"
+            android:process=":extproc"
+            android:foregroundServiceType="location"
+            tools:targetApi="Q"
+            />
+    </application>
+</manifest>
