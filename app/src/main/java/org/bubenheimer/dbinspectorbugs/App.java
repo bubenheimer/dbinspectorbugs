@@ -28,7 +28,6 @@ public class App extends Application {
                 .databaseBuilder(this, DB.class, "exploredb")
                 .setJournalMode(RoomDatabase.JournalMode.TRUNCATE)
                 .build();
-        new Thread(() -> db.counterDao()
-                .insert(new Counter(new Random().nextInt()))).start();
+        new Thread(() -> db.counterDao().insert(new Counter(new Random().nextInt()))).start();
     }
 }
