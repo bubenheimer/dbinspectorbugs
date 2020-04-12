@@ -29,6 +29,6 @@ public class App extends Application {
                 .setJournalMode(RoomDatabase.JournalMode.TRUNCATE)
                 .build();
         new Thread(() -> db.counterDao()
-                .insert(new Counter(new Random(System.nanoTime()).nextInt()))).start();
+                .insert(new Counter(new Random().nextInt()))).start();
     }
 }
