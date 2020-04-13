@@ -17,12 +17,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Alternatively, run service in a separate process -->
         <service
             android:name=".FGSvc"
             android:process=":extproc"
-            android:foregroundServiceType="location"
-            tools:targetApi="Q"
             />
     </application>
 </manifest>
